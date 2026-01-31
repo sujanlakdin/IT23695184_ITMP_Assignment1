@@ -59,15 +59,15 @@ Make sure the following are installed on your system:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/swift-translator-playwright.git
+   git clone https://github.com/<sujanlakdin>/swift-translator-playwright.git
 
 2. Navigate to the project directory
 
-cd swift-translator-playwright
+       cd swift-translator-playwright
 
 Install dependencies
 
-npm install
+        npm install
 
 
 Install Playwright browsers
