@@ -8,8 +8,7 @@ It includes all scripts, test cases, and configuration files necessary to run au
 ## Repository Overview
 
 **Repository Name:** `swift-translator-playwright`  
-**Repository Link:** [https://github.com/<your-username>/swift-translator-playwright](https://github.com/<your-username>/swift-translator-playwright)
-
+**Repository Link:** https://github.com/sujanlakdin/IT23695184_ITMP_Assignment1.git
 ### Project Structure
 
 swift-translator-playwright/
