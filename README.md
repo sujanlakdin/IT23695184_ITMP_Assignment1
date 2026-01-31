@@ -1,119 +1,116 @@
-# Swift Translator Automated Tests
+# Swift Translator – Playwright Automated Testing Project
 
-This repository contains the **full Playwright project** for testing the [Swift Translator](https://www.swifttranslator.com/) web application.  
-It includes all scripts, test cases, and configuration files necessary to run automated tests for both **functional** and **UI** features.
+This repository contains the **full Playwright automation project** developed for functional and UI testing of the **Swift Translator** web application.
+
+🔗 **Application Under Test:** https://www.swifttranslator.com/
+
+The project is created as part of an **ITPM assignment** and includes:
+- Positive functional test cases
+- Negative functional test cases
+- Basic UI test case
+- Playwright configuration files
+- Data-driven testing approach
 
 ---
 
-## Repository Overview
-
-**Repository Name:** `swift-translator-playwright`  
-**Repository Link:** https://github.com/sujanlakdin/IT23695184_ITMP_Assignment1.git
-### Project Structure
+## 📁 Project Structure
 
 swift-translator-playwright/
 │
 ├── tests/
-│ └── translator.spec.js # All positive, negative, and UI test scripts
+│ └── translator.spec.js # All functional & UI test cases
 │
-├── playwright.config.js # Playwright configuration file
-│
-├── package.json # Node.js project and dependencies
-│
-├── package-lock.json # Locked dependencies
-│
-└── README.md # This file
+├── playwright.config.js # Playwright configuration
+├── package.json # Project dependencies
+├── package-lock.json
+└── README.md # Project documentation
 
 
 ---
 
-## Features of the Tests
+## 🧪 Test Coverage
 
-1. **Positive Functional Tests (25 cases)**  
-   - Validate Singlish-to-Sinhala translations for typical use cases.
+### ✅ Functional Testing
+- **Positive test cases** (Sinhala-English mixed inputs, numbers, dates, long paragraphs, spacing issues)
+- **Negative test cases** (invalid characters, English-only input, URLs, uppercase text, malformed words)
 
-2. **Negative Functional Tests (10 cases)**  
-   - Handle unexpected or incorrect input to verify system behavior.
+### 🎨 UI Testing
+- **Clear button functionality** (verifies input field reset)
 
-3. **UI Validation Tests**  
-   - Check input clearing, placeholder visibility, and other UI elements.
-
-4. **Expected Fail Tests**  
-   - Validate features that are not currently implemented (e.g., dark mode, font resizing).
-
----
-
-## Prerequisites
-
-- Node.js v18+  
-- npm (Node package manager)  
-- Internet connection to access [Swift Translator](https://www.swifttranslator.com/)
+### 📊 Test Approach
+- Data-driven testing using an array of test objects
+- Single browser window execution
+- Sequential execution to avoid test conflicts
 
 ---
 
-## Installation Instructions
+## ⚙️ Prerequisites
 
-1. **Clone the repository**:
+Make sure the following are installed on your system:
 
-```bash
-git clone https://github.com/<your-username>/swift-translator-playwright.git
+- **Node.js** (v18 or higher recommended)  
+  👉 https://nodejs.org/
+- **npm** (comes with Node.js)
+- **Google Chrome** (for Chromium testing)
+
+---
+
+## 📥 Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/swift-translator-playwright.git
+
+2. Navigate to the project directory
+
 cd swift-translator-playwright
+
+Install dependencies
+
 npm install
+
+
+Install Playwright browsers
+
 npx playwright install
 
-Running the Tests
-Run all tests sequentially
+▶️ Running the Tests
+Run all tests
 npx playwright test
 
-Run tests in headed mode (browser visible)
+Run tests with browser UI (headed mode)
 npx playwright test --headed
 
-Generate an HTML Test Report
-npx playwright show-report
 
-Configuration
+⚠️ By default, this project runs with one browser window and headed mode enabled, as required for demonstration and marking.
 
-playwright.config.js contains settings for test execution:
+🔧 Playwright Configuration Highlights
 
-const { defineConfig } = require('@playwright/test');
+   Browser: Chromium (Desktop Chrome)
 
-module.exports = defineConfig({
-  testDir: './tests',
-  timeout: 60000, // Global test timeout
-  expect: {
-    timeout: 10000 // Assertion timeout
-  },
-  workers: 1, // Run tests sequentially
-  use: {
-    headless: false,
-    actionTimeout: 15000, // Timeout for click/fill actions
-    navigationTimeout: 30000,
-  },
-});
+   Execution Mode: Sequential (1 worker)
 
-How Tests Work
+   Headless Mode: Disabled
 
-Browser Setup
+   Timeout: 600 seconds
 
-One browser instance is opened for all tests.
+   Viewport: 1280 × 720
 
-Functional Tests
+Configuration file: playwright.config.js
 
-Positive tests check correct translation output.
+📝 Important Notes for Marking
 
-Negative tests check incorrect or edge-case inputs.
+  ✅ This repository is publicly accessible
 
-UI Tests
+  ✅ Includes all scripts and configuration files
 
-Validate placeholder text, input clearing, and other UI elements.
+  ✅ Clear README instructions provided
 
-Expected Fail Tests
+  ⚠️ Repositories that are not accessible during marking will not be evaluated
 
-Ensure missing or unsupported features are flagged correctly.
+👨‍💻 Author
 
-
-
-Author
-
-Sujan Lakdin
-IT Undergraduate | IT23695184
+Name: Sujan
+Course: IT Undergraduate
+Module: ITPM
+Testing Tool: Playwright
